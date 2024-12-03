@@ -1,0 +1,73 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-image: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    padding: 2rem;
+
+    &__contenedor {
+        @include m.contenedor;
+    }
+
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__menu {
+        display: block;
+
+        @include m.tablet {
+            display: none;
+        }
+    }
+
+    &__bar {
+        font-size: 3rem;
+        color: v.$gris-claro;
+    }
+
+    &__navegacion {
+        display: none;
+        transition: all ease .3s;
+
+        @include m.tablet {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        &--mostrar {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+    }
+
+    &__logout {
+        @include m.boton(v.$rojo, v.$gris-claro);
+    }
+
+    &__enlace {
+        color: v.$gris;
+        font-weight: v.$bold;
+        transition: all ease .3s;
+
+        &:hover {
+            color: v.$verde;
+        }
+    }
+}

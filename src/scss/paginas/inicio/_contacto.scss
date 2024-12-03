@@ -1,0 +1,122 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contacto {
+    background-color: v.$gris-oscuro;
+    padding: 2rem;
+    margin-top: 3rem;
+
+    &__grid {
+        @include m.grid(1, 3rem);
+        align-items: center;
+        @include m.contenedor;
+
+        @include m.tablet {    
+            @include m.grid(2, 3rem);        
+        }
+    }
+
+    &__span {
+        color: v.$verde;
+    }
+
+    &__descripcion {
+        color: v.$gris-claro;
+    }
+}
+
+.contactos {
+    &__heading {
+        color: v.$gris-oscuro;
+    }
+}
+
+.contacto-formulario {
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(1.2rem);
+    border: solid 1px v.$gris-claro;
+    border-radius: .5rem;
+
+    &__grid {
+        @include m.grid(1, 2rem);
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);            
+        }
+    }
+
+    &__mensaje {
+        font-size: 3rem;
+        font-weight: v.$bold;
+        text-align: center;
+        margin: 1rem 0;
+
+        &--exito {
+            color: v.$verde;
+        }
+
+        &--no-exito {
+            color: v.$rojo;
+        }
+    }
+
+    &__fieldset{
+        border: none;
+        padding: 2rem;
+    }
+
+    &__campo {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    &__label {
+        font-weight: v.$regular;
+        color: v.$gris-claro;
+    }
+
+    &__input,
+    &__select {
+        color: v.$gris-oscuro;
+        border: 3px solid transparent;
+        outline: none;
+        border-radius: .5rem;
+        transition: .5s;
+        padding: 1rem;
+
+        &:focus {
+            border-bottom: 3px solid v.$verde
+        }
+    }
+
+    &__texto {
+        margin-top: 3rem;
+    }
+    
+    &__submit {
+        @include m.boton(v.$azul, v.$blanco);
+        
+        &--registrar {
+            margin: 1rem auto;
+        }
+    }
+
+    input[type=file]::file-selector-button {
+        background-color: v.$blanco;
+        color: #000;
+        border: none;
+        border-radius: .5rem;
+        padding: 1rem 1.5rem;
+        margin-right: 2rem;
+        transition: ease all .3s;
+
+        &:hover {
+            background-color: v.$gris-oscuro-light;
+            color: v.$blanco;
+            cursor: pointer;
+        }
+    }
+}

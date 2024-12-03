@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.adquirir {
+    @include m.contenedor;
+    margin: 6rem auto;
+
+    &__grid {
+        @include m.grid(1, 4rem);
+        align-items: center;
+
+        @include m.tablet {
+            @include m.grid(2, 4rem);
+        }
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__header {
+        color: v.$gris-oscuro;
+    }
+
+    &__descripcion {
+        text-align: left;
+    }
+
+    &__enlace {
+        @include m.boton(v.$verde, v.$gris-claro);
+    }
+}

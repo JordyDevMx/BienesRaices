@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.calidad {
+    @include m.contenedor;
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__heading {
+        color: v.$gris-oscuro;
+    }
+
+    &__grid {
+        @include m.grid(1, 2rem);
+
+        @include m.tablet {
+            @include m.grid(4, 2rem);
+        }
+    }
+}
+
+.calidad-card {
+    border-radius: .5rem;
+    display: block;
+
+    &__header {
+        border-radius: 1rem 1rem 0 0;
+        background-color: v.$gris-oscuro;
+        color: v.$gris-claro;
+        padding: 1rem;
+    }
+
+    &__titulo {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &__footer {
+        position: relative;
+    }
+
+    &__imagen {
+        height: 20rem;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    &__texto {
+        color: v.$gris-claro;
+        padding: 1rem;
+        text-align: center;
+        top: -18px;
+        height: 20rem;
+        position: absolute;
+        background: rgba(0,0,0,.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 0 1rem 1rem;
+        opacity: 0;
+        transition: all ease .5s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

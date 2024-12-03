@@ -1,0 +1,26 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.inversion {
+    background-color: v.$gris-oscuro;
+    height: 60vh;
+    padding: 2rem;
+    margin: 3rem auto;
+
+    &__grid {
+        @include m.contenedor-md;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &__descripcion {
+        color: v.$gris-claro;
+    }
+
+    &__enlace {
+        @include m.boton(v.$verde, v.$gris-claro);
+    }
+}

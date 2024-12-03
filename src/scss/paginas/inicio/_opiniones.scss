@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.opinion {
+    @include m.contenedor;
+    margin: 6rem auto;
+
+    &__heading {
+        color: v.$gris-oscuro;
+    }
+
+    &__grid {
+        @include m.contenedor;
+    }
+
+    
+    .swiper-wrapper {
+        height: 30% !important;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: rgba(v.$verde, .7);
+        font-weight: v.$bold;
+    }
+}
+
+.opinion-card {
+
+    &__descripcion {
+        font-style: italic;
+        font-weight: v.$delgada;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    &__cliente {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__nombre {
+        color: v.$verde;
+        font-weight: v.$bold;
+        margin: 0;
+    }
+
+    &__ciudad {
+        color: v.$gris-oscuro;
+        margin: 0;
+        font-style: italic;
+    }
+}

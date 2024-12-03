@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.numeros {
+    margin: 3rem 0;
+
+    &__contenedor {
+        padding: 2rem;
+        background-color: v.$gris-oscuro;
+    }
+
+    &__grid {
+        @include m.contenedor;
+        @include m.grid(1, 3rem);
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            @include m.grid(4, 3rem);            
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__total {
+        margin: 1rem 0;
+        font-size: 6rem;
+        font-weight: v.$bold;
+        color: v.$verde;
+    }
+
+    &__texto {
+        font-size: 2rem;
+        color: v.$gris-claro;
+        text-transform: uppercase;
+    }
+
+    &__boton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__enlace {
+        @include m.boton(v.$gris-claro, v.$gris-oscuro);
+    }
+
+    &__imagen {
+        height: 70vh;
+    }
+}

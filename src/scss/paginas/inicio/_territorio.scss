@@ -1,0 +1,66 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.territorio {
+    @include m.contenedor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6rem;
+
+    &__heading {
+        color: v.$gris-oscuro;
+    }
+
+    &__descripcion {
+        font-size: 2rem;
+    }
+
+    &__grid {
+        @include m.contenedor;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: rgba(v.$verde, .7);
+        font-weight: v.$bold;
+    }
+}
+
+.territorio-card {
+    // max-width: 25rem;
+    border-radius: .5rem;
+    border: solid 1px v.$gris-oscuro;
+
+    &__titulo {
+        padding: 1rem;
+        background-color: v.$gris-oscuro;
+    }
+
+    &__ciudad {
+        text-align: center;
+        font-weight: v.$bold;
+    }
+
+    &__info {
+        padding: 1rem;
+    }
+
+    &__tel {
+        font-weight: v.$bold;
+    }
+
+    &__span {
+        font-style: italic;
+        font-weight: v.$regular;
+    }
+
+    &__direccion {
+        color: v.$gris-oscuro;
+        transition: ease .5s;
+
+        &:hover {
+            color: v.$verde;
+        }
+    }
+}
